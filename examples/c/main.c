@@ -1,4 +1,4 @@
-#include "../../qtest.h"
+#include "../../test.h"
  char* alphabet = "abcdefghijklmnopqrstuvwxyz";
 #include <string.h>
 

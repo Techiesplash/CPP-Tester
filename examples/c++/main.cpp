@@ -1,4 +1,4 @@
-#include "../../qtest.h"
+#include "../../test.h"
 #include <exception>
 #include <string.h>
 
