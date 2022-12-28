@@ -23,4 +23,4 @@ Place "test.h" and "test_impl.h" in the same directory, preferably an Include pa
 <br />
 Examples are included with the code. Have fun.
 <br /><br />
-<h3>Anyone is free to use, copy, modify, merge, publish, distribute, sublicense, or and/or sell copies of the software.</h3>
+<h3>Anyone is free to use, copy, modify, merge, publish, distribute, sublicense, or and/or sell copies of the software*.</h3>
