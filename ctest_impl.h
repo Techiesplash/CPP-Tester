@@ -1,6 +1,16 @@
+/**
+ * @file ctest_impl.h
+ * @author Techiesplash (techiesplash137@gmain.com)
+ * @brief Definitions for ctest
+ * @version 0.1
+ * @date 2022-12-28
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include <stdio.h>
 #include <stdlib.h>
-#include "microtest.h"
+#include "ctest.h"
 
 bool exitOnFail = false;
 bool lastTestFailed = false;
@@ -17,12 +27,12 @@ char *testname = "";
 UnitField *initializingField;
 #endif
 
-void utCase(char *c)
+void tCase(char *c)
 {
     testname = c;
 }
 
-bool utAssert(bool assertion, const char *n)
+bool tAssert(bool assertion, const char *n)
 {
     if (assertion)
     {
@@ -42,7 +52,7 @@ bool utAssert(bool assertion, const char *n)
 
 #ifdef __cplusplus
 template <typename Ret, typename Ex, typename... Args>
-bool utException(Ret (*function)(), const char *n, Args... args)
+bool tException(Ret (*function)(), const char *n, Args... args)
 {
     try
     {
@@ -69,7 +79,7 @@ bool utException(Ret (*function)(), const char *n, Args... args)
 }
 
 template <typename Ret, typename... Args>
-bool utNoException(Ret (*function)(), const char *n, Args... args)
+bool tNoException(Ret (*function)(), const char *n, Args... args)
 {
     try
     {
@@ -89,7 +99,7 @@ bool utNoException(Ret (*function)(), const char *n, Args... args)
 }
 
 template <typename... Args>
-void utFailMsg(const char *message, Args... args)
+void tFailMsg(const char *message, Args... args)
 {
     if (lastTestFailed)
     {
@@ -97,7 +107,7 @@ void utFailMsg(const char *message, Args... args)
     }
 }
 template <typename... Args>
-void utPassMsg(const char *message, Args... args)
+void tPassMsg(const char *message, Args... args)
 {
     if (!lastTestFailed)
     {
@@ -106,7 +116,7 @@ void utPassMsg(const char *message, Args... args)
 }
 #endif
 
-void utFailMsg(const char *message)
+void tFailMsg(const char *message)
 {
     if (lastTestFailed)
     {
@@ -116,7 +126,7 @@ void utFailMsg(const char *message)
     }
 }
 
-void utPassMsg(const char *message)
+void tPassMsg(const char *message)
 {
     if (!lastTestFailed)
     {
@@ -169,7 +179,7 @@ void Dump(const char *title, void *data, int length)
     puts("\e[0m");
 }
 
-void utFailDump(const char *title, void *data, int length)
+void tFailDump(const char *title, void *data, int length)
 {
     if (lastTestFailed)
     {
@@ -177,7 +187,7 @@ void utFailDump(const char *title, void *data, int length)
     }
 }
 
-void utPassDump(const char *title, void *data, int length)
+void tPassDump(const char *title, void *data, int length)
 {
     if (!lastTestFailed)
     {
@@ -200,7 +210,7 @@ UnitField::UnitTest::UnitTest(const char *name, void (*code)())
     initializingField->unitTests.push_back(this);
 }
 
-void utRunTests(bool abortOnFail)
+void tRunTests(bool abortOnFail)
 {
 
     puts("Beginning Unit Tests...");
@@ -234,11 +244,11 @@ void utRunTests(bool abortOnFail)
 }
 #endif
 
-void utPrintTotalScore()
+void tPrintTotalScore()
 {
     printf("\nTotal Unit Test Score: \e[1;32m%i\e[0m tests passed, \e[1;31m%i\e[0m failed.\n", totalPass, totalFails);
 }
-void utFinishTest()
+void tFinishTest()
 {
     // Print results
     printf("\nTest %i \"%s\" Results: \e[1;32m%i\e[0m tests passed, \e[1;31m%i\e[0m failed.\n", testCount++, testname, successesInTest, failuresInTest);

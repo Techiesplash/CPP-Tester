@@ -1,4 +1,4 @@
-#include "../../microtest.h"
+#include "../../ctest.h"
 #include <exception>
 #include <string.h>
 
@@ -16,10 +16,10 @@ void NoEx()
 
 void otherCommands()
 {
-    utFailDump("Example Dump  (Fail)", alphabet, strlen(alphabet));
-    utPassDump("Example Dump  (Pass)", alphabet, strlen(alphabet));
-    utFailMsg("Failure Message");
-    utPassMsg("Pass Message");
+    tFailDump("Example Dump  (Fail)", alphabet, strlen(alphabet));
+    tPassDump("Example Dump  (Pass)", alphabet, strlen(alphabet));
+    tFailMsg("Failure Message");
+    tPassMsg("Pass Message");
 }
 
 // Demonstrate OO Features
@@ -39,17 +39,17 @@ class TestField : UnitField
 
     // Unit tests here auto-register
     UnitTest sampleTest = UnitTest("Sample Test", []() {
-        utAssert(1==1, "Test Assert (Pass)");
+        tAssert(1==1, "Test Assert (Pass)");
         otherCommands();
-        utAssert(1==2, "Test Assert (Fail)");
+        tAssert(1==2, "Test Assert (Fail)");
         otherCommands();
         // Can pass args through these funcs
         //          Ret   Exception          Func      Name
-        utException<void, std::out_of_range>(ThrowsEx, "Test Exception (Pass)");
-        utException<void, std::invalid_argument>(ThrowsEx, "Test Exception (Fail, incorred)");
-        utException<void, std::out_of_range>(NoEx, "Test Exception (Pass, none)");
-        utNoException<void>(ThrowsEx, "Test NoException (Fail)");
-        utNoException<void>(NoEx, "Test NoException (Pass)");
+        tException<void, std::out_of_range>(ThrowsEx, "Test Exception (Pass)");
+        tException<void, std::invalid_argument>(ThrowsEx, "Test Exception (Fail, incorred)");
+        tException<void, std::out_of_range>(NoEx, "Test Exception (Pass, none)");
+        tNoException<void>(ThrowsEx, "Test NoException (Fail)");
+        tNoException<void>(NoEx, "Test NoException (Pass)");
     });
 };
 
@@ -58,5 +58,5 @@ TestField field("Test Field");
 
 int main()
 {
-    utRunTests(false);
+    tRunTests(false);
 }

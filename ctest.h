@@ -1,7 +1,7 @@
 /**
- * @file microtest.h
+ * @file ctest.h
  * @author Techiesplash (techiesplash137@gmail.com)
- * @brief Small, platform-agnostic Unit Test tools for C++
+ * @brief Small, platform-independent Unit Test tools for C++
  * @version 0.1
  * @date 2022-12-27
  *
@@ -17,7 +17,7 @@
  *
  * @param c Name of the test
  */
-void utCase(char *c);
+void tCase(char *c);
 
 /**
  * @brief Asserts that this is true, and fails the test if it is not
@@ -27,21 +27,21 @@ void utCase(char *c);
  * @return true The test passed
  * @return false The test failed
  */
-bool utAssert(bool assertion, const char *n);
+bool tAssert(bool assertion, const char *n);
 
 /**
  * @brief Print a message if the last test failed (non-formatted)
  *
  * @param message The message to print
  */
-extern void utFailMsg(const char *message);
+extern void tFailMsg(const char *message);
 
 /**
  * @brief Print a message if the last test passed (non-formatted)
  *
  * @param message The message to print
  */
-extern void utPassMsg(const char *message);
+extern void tPassMsg(const char *message);
 
 /**
  * @brief Dump specified data as hexidecimal if the last test failed
@@ -50,7 +50,7 @@ extern void utPassMsg(const char *message);
  * @param data The data to dump
  * @param length The amount of data to dump
  */
-void utFailDump(const char *title, void *data, int length);
+void tFailDump(const char *title, void *data, int length);
 
 /**
  * @brief Dump specified data as hexidecimal if the last test passed
@@ -59,7 +59,7 @@ void utFailDump(const char *title, void *data, int length);
  * @param data The data to dump
  * @param length The amount of data to dump
  */
-void utPassDump(const char *title, void *data, int length);
+void tPassDump(const char *title, void *data, int length);
 #ifdef __cplusplus
 
 /**
@@ -70,7 +70,7 @@ void utPassDump(const char *title, void *data, int length);
  * @param args Arguments for that message
  */
 template <typename... Args>
-extern void utFailMsg(const char *message, Args... args);
+extern void tFailMsg(const char *message, Args... args);
 
 /**
  * @brief Print a message if the last test passed (formatted)
@@ -80,7 +80,7 @@ extern void utFailMsg(const char *message, Args... args);
  * @param args Arguments for that message
  */
 template <typename... Args>
-extern void utPassMsg(const char *message, Args... args);
+extern void tPassMsg(const char *message, Args... args);
 
 #include <vector>
 /**
@@ -96,7 +96,7 @@ extern void utPassMsg(const char *message, Args... args);
  * @return false The test failed
  */
 template <typename Ret, typename Ex, typename... Args>
-bool utException(Ret (*function)(), const char *n, Args... args);
+bool tException(Ret (*function)(), const char *n, Args... args);
 
 /**
  * @brief Asserts there will be no exception of any type in this function
@@ -110,7 +110,7 @@ bool utException(Ret (*function)(), const char *n, Args... args);
  * @return false The test failed
  */
 template <typename Ret, typename... Args>
-bool utNoException(Ret (*function)(), const char *n, Args... args);
+bool tNoException(Ret (*function)(), const char *n, Args... args);
 
 class UnitField
 {
@@ -138,19 +138,19 @@ public:
  *
  * @param abortOnFail Whether or not the program should exit with code 1 if a test fails
  */
-void utRunTests(bool abortOnFail = true);
+void tRunTests(bool abortOnFail = true);
 #endif
 /**
  * @brief Finishes a unit test (Not to be used inside a UnitField)
  *
  */
-void utFinishTest();
+void tFinishTest();
 
 /**
  * @brief Prints totals
  *
  */
-void utPrintTotalScore();
+void tPrintTotalScore();
 
-#include "microtest_impl.h"
+#include "ctest_impl.h"
 #endif
