@@ -9,11 +9,11 @@
 ![3DS](https://img.shields.io/badge/3DS-D12228?style=for-the-badge&logo=nintendo-3ds&logoColor=white)
 ![Switch](https://img.shields.io/badge/Switch-E60012?style=for-the-badge&logo=nintendo-switch&logoColor=white)
 
-![GitHub forks](https://img.shields.io/github/forks/Techiesplash/Microtest-C++)
-![GitHub repo size](https://img.shields.io/github/repo-size/Techiesplash/Microtest-C++)
-![GitHub issues](https://img.shields.io/github/issues/Techiesplash/Microtest-C++)
+![GitHub forks](https://img.shields.io/github/forks/Techiesplash/MicroTest-C++)
+![GitHub repo size](https://img.shields.io/github/repo-size/Techiesplash/MicroTest-C++)
+![GitHub issues](https://img.shields.io/github/issues/Techiesplash/MicroTest-C++)
 
-![GitHub](https://img.shields.io/github/license/Techiesplash/Microtest-C++)
+![GitHub](https://img.shields.io/github/license/Techiesplash/MicroTest-C++)
 
 <h2>Introduction</h2>
 This is a minimal-dependency, platform-independent Unit Testing utility. Use this as you please.
