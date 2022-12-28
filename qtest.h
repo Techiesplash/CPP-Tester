@@ -152,5 +152,5 @@ void tFinishTest();
  */
 void tPrintTotalScore();
 
-#include "ctest_impl.h"
+#include "qtest_impl.h"
 #endif

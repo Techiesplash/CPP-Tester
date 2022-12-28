@@ -1,7 +1,7 @@
 /**
  * @file ctest_impl.h
  * @author Techiesplash (techiesplash137@gmain.com)
- * @brief Definitions for ctest
+ * @brief Definitions for qtest
  * @version 0.1
  * @date 2022-12-28
  * 
@@ -10,7 +10,7 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
-#include "ctest.h"
+#include "qtest.h"
 
 bool exitOnFail = false;
 bool lastTestFailed = false;
