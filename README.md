@@ -19,7 +19,7 @@
 This is a minimal-dependency, platform-independent Unit Testing utility. Use this as you please.
 
 <h2>Setup</h2>
-Place "microtest.h" and "microtest_impl.h" in the same directory, preferably an Include path. Just include "microtest.h" and that is all.
+Place "test.h" and "test_impl.h" in the same directory, preferably an Include path. Just include "test.h" and that is all.
 <br />
 Examples are included with the code. Have fun.
 <br /><br />
